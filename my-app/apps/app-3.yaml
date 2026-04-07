@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     path: app-3
-    repoURL: https://github.com/brijendra-beehyv/my-pvt-repo.git
+    repoURL: git@github.com/brijendra-beehyv/my-pvt-repo.git
     targetRevision: HEAD
   syncPolicy:
     automated:
@@ -21,3 +21,5 @@ spec:
     syncOptions:
     - CreateNamespace=true
     - Validate=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
