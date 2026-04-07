@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: my-app/app-2
+    path: app-3
     repoURL: https://github.com/brijendra-beehyv/my-pvt-repo.git
     targetRevision: HEAD
   syncPolicy:
