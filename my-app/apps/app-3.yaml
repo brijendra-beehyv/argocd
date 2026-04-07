@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app-1
+  name: my-app-2
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   namespace: argocd
@@ -10,8 +10,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: my-app/app-1
-    repoURL: https://github.com/brijendra-beehyv/argocd.git
+    path: my-app/app-2
+    repoURL: https://github.com/brijendra-beehyv/my-pvt-repo.git
     targetRevision: HEAD
   syncPolicy:
     automated:

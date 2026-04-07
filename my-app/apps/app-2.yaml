@@ -14,5 +14,10 @@ spec:
     repoURL: https://github.com/brijendra-beehyv/argocd.git
     targetRevision: HEAD
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
     syncOptions:
     - CreateNamespace=true
+    - Validate=true
