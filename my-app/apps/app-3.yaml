@@ -16,7 +16,8 @@ spec:
     helm:
       releaseName: my-helm-app
       valueFiles:
-        - values.yaml
+        - ./values.yaml
+        - ../envs/dev/values.yaml
   
   destination:
     server: https://kubernetes.default.svc

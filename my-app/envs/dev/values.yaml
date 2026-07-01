@@ -1,0 +1,3 @@
+my-helm-app:
+  image:
+    tag: "0.1.0"
