@@ -1,0 +1,5 @@
+namespace: core
+
+image:
+  repo: "brijendrasingh0369/nginx"
+  tag: "0.1.1"

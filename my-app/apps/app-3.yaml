@@ -3,23 +3,31 @@ kind: Application
 metadata:
   name: my-app-3
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
   namespace: argocd
 spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/brijendra-beehyv/argocd.git
+    targetRevision: HEAD
+    path: my-app/app-3
+
+    helm:
+      releaseName: my-helm-app
+      valueFiles:
+        - values.yaml
+  
   destination:
     server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: app-3
-    repoURL: git@github.com:brijendra-beehyv/my-pvt-repo.git
-    targetRevision: HEAD
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
       allowEmpty: false
     syncOptions:
-    - CreateNamespace=true
-    - Validate=true
-    - PrunePropagationPolicy=foreground
-    - PruneLast=true
+      - CreateNamespace=true
+      - Validate=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true

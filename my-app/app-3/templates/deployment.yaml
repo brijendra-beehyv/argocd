@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
-  namespace: foo
+  name: my-helm-app
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: my-helm-app
   template:
     metadata:
       labels:
-        app: myapp
+        app: my-helm-app
     spec:
       containers:
-      - name: myapp
-        image: brijendrasingh0369/nginx:0.1.1
+      - name: my-helm-app
+        image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
         ports:
         - containerPort: 80
         resources:
